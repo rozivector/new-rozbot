@@ -43,7 +43,7 @@ Official First release - 31th  October 2018
 <br />
 <br />
 
-AND MUCH MORE!!! Visit my website to view complete my commands!
+AND MUCH MORE!!! Visit <a href="https://rozbot.site123.me/">my website</a> to view complete my commands!
 
 Ready to serve! 😉
 <br />
