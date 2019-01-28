@@ -52,7 +52,7 @@ Ready to serve! 😉
   <img src="https://discordbots.org/api/widget/481305515092213763.svg" alt="RozBot" />
 </a>
 <br />
-<a href="https://discordbotlist.com/bots/460847447602757633">
+<a href="https://discordbotlist.com/bots/481305515092213763">
 	<img 
 		width="380" 
 		height="140" 
