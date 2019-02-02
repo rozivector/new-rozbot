@@ -47,7 +47,6 @@ exports.run = async(client, message, args) => {
     const member = message.guild.member(user);
   let embed = new Discord.RichEmbed()
   .setAuthor(`${user.tag}`, user.displayAvatarURL)
-  .setColor('RANDOM')
   .setThumbnail(user.displayAvatarURL)
   .addField("Username", `${user.username}`, true)
   .addField("ID", `${user.id}`, true)

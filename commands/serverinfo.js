@@ -5,13 +5,10 @@ const ColorMap =
     'idle' : '#FF8000',
     'streaming' : '#A901DB',
     'dnd' : '#FF0000',
-    'offline' : '#848484'
+    'offline' : '#848484',
+    'invisible' : '#848484'
 };
-const ngebot =
-{
-    'true' : 'Bot User',
-    'false' : 'Regular User'
-};
+
 const statusAnimation =
 {
 	'online' : `<:online:504813930313547776>`,
@@ -28,7 +25,8 @@ const StatusText =
     'idle' : 'Idle',
     'dnd' : 'Do Not Disturb',
     'offline' : 'Offline',
-    'streaming' : 'Streaming'
+    'streaming' : 'Streaming',
+    'invisible' : 'Invisible'
 }
 const verlev =
 {
@@ -57,17 +55,29 @@ const servico =
     'us-west' : ':flag_us: US West',
     'eu-west' : ':flag_eu: Western Europe'
 }
+
+
 module.exports.run = (client, message, args) => {
+  
+  let textchan = message.guild.channels.findAll("type", "text").length;
+  let voicechan = message.guild.channels.findAll("type", "voice").length;
+  let totchan = textchan+voicechan;
+  
+  var iconHD = '?size=1024'
+  if(!message.guild.iconURL)
+     {
+     iconHD = '';
+     }
   let embed = new Discord.RichEmbed()
   .setAuthor(`${message.guild.name}`, `${message.guild.iconURL ? message.guild.iconURL : ""}`)
   .setDescription('Here is the server information: ')
-  .setThumbnail(`${message.guild.iconURL ? message.guild.iconURL : ""}`)
+  .setThumbnail(`${message.guild.iconURL ? message.guild.iconURL : ""}`+iconHD)
   .addField('Server Name: ', message.guild.name, true)
   .addField('Server ID: ', message.guild.id, true)
-  .addField('Server Owner: ', `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+  .addField('Server Owner: ', `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator} \n<@${message.guild.owner.user.id}>`, true)
   .addField('Server Region: ', servico[`${message.guild.region}`], true)
-  .addField('Members: ', `**${message.guild.memberCount}** Users \n**${message.guild.memberCount - message.guild.members.filter(mb => mb.user.bot).size}** Humans \n**${message.guild.members.filter(mb => mb.user.bot === true).size}** Bots \n**${message.guild.members.filter(members => members.presence.status == 'online').size}** ${statusAnimation.online} Online \n**${message.guild.members.filter(members => members.presence.status == 'idle').size}** ${statusAnimation.idle} Idle \n**${message.guild.members.filter(members => members.presence.status == 'dnd').size}** ${statusAnimation.dnd} Do Not Disturb \n**${message.guild.members.filter(members => members.presence.status == 'offline').size || message.guild.members.filter(members => members.presence.status == 'invisible').size}** ${statusAnimation.invisible} Offline`, true)
-  .addField('Channels: ', `**${message.guild.channels.findAll("type", "text").length}** Text \n**${message.guild.channels.findAll("type", "voice").length}** Voice \n**${message.guild.channels.findAll("type", "category").length}** Category`, true)
+  .addField('Members: ', `**${message.guild.memberCount}** Total \n**${message.guild.memberCount - message.guild.members.filter(mb => mb.user.bot).size}** Users \n**${message.guild.members.filter(mb => mb.user.bot === true).size}** Bots \n**${message.guild.members.filter(members => members.presence.status == 'online').size}** ${statusAnimation.online} Online \n**${message.guild.members.filter(members => members.presence.status == 'idle').size}** ${statusAnimation.idle} Idle \n**${message.guild.members.filter(members => members.presence.status == 'dnd').size}** ${statusAnimation.dnd} Do Not Disturb \n**${message.guild.members.filter(members => members.presence.status == 'offline').size || message.guild.members.filter(members => members.presence.status == 'invisible').size}** ${statusAnimation.invisible} Offline`, true)
+  .addField('Channels: ', `**${textchan}** Text \n**${voicechan}** Voice \n**${totchan}** Total \n(**${message.guild.channels.findAll("type", "category").length}** Category)`, true)
   .addField('Server Roles: ', `${message.guild.roles.size}`, true)
   .addField('Server Emojis: ', `${message.guild.emojis.size}`, true)
   .addField('Verification Level: ', verlev[`${message.guild.verificationLevel}`], true)
