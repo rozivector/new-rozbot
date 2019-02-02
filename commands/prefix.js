@@ -14,5 +14,5 @@ exports.run = async(client, msg, args) => {
      if(err) console.log(err);
   })
   
-  msg.channel.send(`Prefix has been set to ${args[0]}`);
+  msg.channel.send(`:white_check_mark: Prefix has been set to **${args[0]}**`);
 }

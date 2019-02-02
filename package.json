@@ -2,10 +2,10 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "index.js",
+  "name": "new-rozbot",
+  "version": "0.2.5",
+  "description": "RozBot build for fun and entertainment members in Discord Server",
+  "main": "server.js",
   "scripts": {
     "start": "node index.js"
   },
@@ -38,18 +38,18 @@
     "dbdapi.js": "^0.7.5-pre",
     "parse-ms": "^2.0.0",
     "fs": "^0.0.2",
-    "flip-text": "^1.1.0"
-  },
-  "engines": {
-    "node": "8.x"
+    "flip-text": "^1.1.0",
+    "better-sqlite3": "^5.4.0"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://github.com/rozivector/new-rozbot"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "rozbot",
+    "discord",
+    "bot"
   ]
 }

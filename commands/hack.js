@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 exports.run = async(client, message, args) => 
 
 {
-          message.channel.sendMessage(":1234: Preparing a funny hacking game...");
+  let user = message.mentions.users.first() || message.author;
+          message.channel.sendMessage(`:1234: Prepare to hacking ${user.username}#${user.discriminator}...`);
 
   message.channel.sendMessage("```Starting hack...```")
         .then(message => 
@@ -48,7 +49,7 @@ exports.run = async(client, message, args) =>
                             setTimeout(function()
                         {
 
-                       message.edit("```Hacked Successfully!``` \n__Click here to Download the reports!__")
+                       message.edit("```√ Hacked Successfully!``` \n__Click here to Download the reports!__")
                         }, 4000)
                             
                        message.edit("```Getting users and passwords reports....```")
@@ -88,14 +89,14 @@ exports.run = async(client, message, args) =>
                     }, 1000)
 
 
-               message.edit("```Copying all accounts in this server: [========100.0%========]```")
+               message.edit("```Copying all data from member: [========100.0%========]```")
                 }, 2000)
 
 
-               message.edit("```Copying all accounts in this server: [========50.0%        ]```")
+               message.edit("```Copying all data from member: [========50.0%        ]```")
                 }, 4000) 
 
-            message.edit("```Copying all accounts in this server: [        0.0%        ]```")
+            message.edit("```Copying all data from member: [        0.0%        ]```")
              }, 1000)
 
             message.edit("```Analyze data...```")
@@ -113,6 +114,10 @@ exports.run = async(client, message, args) =>
 }
 
 module.exports.help = {
-  name: "hack",
-  alias: "heck"
+  name: "hack"
+}
+
+exports.conf = {
+  name : ['hack'],
+   aliases: ['heck']
 }

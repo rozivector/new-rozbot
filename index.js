@@ -2,19 +2,35 @@
 const { Util, RichEmbed } = require("discord.js");
 const ytdl = require("ytdl-core");
 const Discord = require("discord.js");
+const DBL = require("dblapi.js");
 const client = new Discord.Client({disableEveryone: true});
+const dbl = new DBL(process.env.dbl, client);
+const db = require('quick.db');
 const queue = new Map();
 const fs = require("fs");
 const config = require("./config.json");
+const botOwner = '398845938816516096';
+client.modlog = new db.table("ModLogTeam");
+client.config = config;
 
 require("./server.js");
 
 function changing_status() {
   let statdetail = [' | r!help | V 2.5'];
-  let status = [`Type r!help`+statdetail, `With ${client.users.size.toLocaleString()} users`+statdetail, `with ${client.guilds.size.toLocaleString()} servers`+statdetail, `With ${client.channels.size.toLocaleString()} channels`+statdetail, `Rozi Vector#0101`+statdetail, `Justice`+statdetail, `24/7 Support`+statdetail]
+  let status = [`Type r!help`+statdetail, 
+                `with ${client.users.size.toLocaleString()} users`+statdetail, 
+                `with ${client.guilds.size.toLocaleString()} servers`+statdetail, 
+                `with ${client.channels.size.toLocaleString()} channels`+statdetail, 
+                `Rozi Vector#6255`+statdetail, 
+                `Justice`+statdetail, 
+                `24/7 Support`+statdetail]
   let random = status[Math.floor(Math.random() * status.length)]
   client.user.setActivity(random);
 }
+
+dbl.on('posted', () => {
+  console.log("All has been posted");
+})
 
 client.on('ready', () => {
   console.log("Ready!")
@@ -61,6 +77,7 @@ client.on('message', async msg => {
   try {
     let commandFile = require(`./commands/${cmd}.js`);
     commandFile.run(client, msg, args);
+    
   } catch (e) {
     console.log(e.stack);
   } finally {
@@ -148,7 +165,7 @@ function play(guild, song, message) {
 }
 	console.log(serverQueue.songs);
 
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url, { quality: 'highestaudio' }))
+	 const dispatcher = serverQueue.connection.playStream(ytdl(song.url, { quality: 'highestaudio' }))
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);

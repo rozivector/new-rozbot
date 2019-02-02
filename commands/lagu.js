@@ -10,6 +10,10 @@ const config = require("../config.json");
 
 // Run's the command's
 exports.run = async(client, msg, args, member) => {
+  
+    if(msg.author.id != '398845938816516096') return msg.channel.sendMessage("<:WrongMark:524375774741135362> This command only for bot creator!");
+
+  
   let rozi = JSON.parse(fs.readFileSync("./rozi.json", "utf8"));
   if(!rozi[msg.guild.id]){ 
       rozi[msg.guild.id] = {
@@ -27,7 +31,7 @@ if (!args[0]) {
   } else if(args[0] == 'serigala') {
     let embed = new RichEmbed()
     .setColor('RANDOM')
-    .setTitle("Nineball - Akulah Serigala | Official Lyric Video")
+    .setTitle("U ded soon")
     .setDescription(config.COLOR)
     msg.channel.send(embed)
   }

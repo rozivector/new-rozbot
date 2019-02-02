@@ -13,7 +13,12 @@ exports.run = async(client, msg, args) => {
         'https://1.bp.blogspot.com/-PCocm_h9P6A/W9GbmfUDz0I/AAAAAAAABPI/0lTbHWgMOn8rP9mEBHSHRtMgVQgF3i5wwCLcBGAs/s320/cream_the_rabbit_and_cheese_in_sonic_forces_by_thezetoblade-dbhtef3.jpg',
         'https://1.bp.blogspot.com/-yIJrTtReetc/W9GcNtO6hHI/AAAAAAAABPQ/E4GS6U8My7gV9iaNFal5Xl0fLVY2qu7PQCLcBGAs/s320/WhatsApp%2BImage%2B2018-10-25%2Bat%2B17.29.59.jpeg',
         'https://3.bp.blogspot.com/-pBWAqyjaMbY/W9GcN09VkoI/AAAAAAAABPU/7Cuf_s-Vk8MPFrYmk0epTizC7pN7vbAXwCLcBGAs/s320/WhatsApp%2BImage%2B2018-10-25%2Bat%2B17.30.24.jpeg',
-        'https://3.bp.blogspot.com/-rF8nNsOpslk/W9GcNxj4LaI/AAAAAAAABPY/tUtceNQr5R87ZmkSnXK7g8kLp4k-JmhLACLcBGAs/s1600/WhatsApp%2BImage%2B2018-10-25%2Bat%2B17.31.03.jpeg'
+        'https://3.bp.blogspot.com/-rF8nNsOpslk/W9GcNxj4LaI/AAAAAAAABPY/tUtceNQr5R87ZmkSnXK7g8kLp4k-JmhLACLcBGAs/s1600/WhatsApp%2BImage%2B2018-10-25%2Bat%2B17.31.03.jpeg',
+        'https://cdn.discordapp.com/attachments/535027866459701268/536841145796526080/6e9.png',
+        'https://cdn.discordapp.com/attachments/535027866459701268/536841177857654784/cream.png',
+        'https://cdn.discordapp.com/attachments/535027866459701268/536841180869165066/winter_cream_the_rabbit_2017_render_by_nibroc_rock_dby9r4g-pre.png',
+        'https://cdn.discordapp.com/attachments/535027866459701268/536841194559373312/hug_me__by_gmt_gabigabriela-d4j4a7b.png',
+        'https://cdn.discordapp.com/attachments/535027866459701268/536843660281643042/creams.jpg'                        
         ];
   
   
