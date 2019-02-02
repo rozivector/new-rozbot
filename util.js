@@ -1,4 +1,4 @@
-const snek = require('node-superfetch');
+ const snek = require('node-superfetch');
 
 class Util {
 	
@@ -91,4 +91,4 @@ class Util {
 }
 
 
-module.exports = Util;
+module.exports = Util; 
