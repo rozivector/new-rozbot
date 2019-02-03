@@ -29,6 +29,7 @@ exports.run = async(client, msg, args) =>
         .setAuthor(msg.author.username, msg.author.displayAvatarURL)
         .setColor('#FF4FF0')
         .setImage(rando_nsfw_imgs[Math.floor(Math.random() * rando_nsfw_imgs.length)])
+        .setFooter("Have image to submit? Send it to Rozi Vector#6255!")
         //.setFooter("🔨 Under development, support RozBot to add more nsfw pictures!")
     msg.channel.sendMessage(embed)
     .then(msg => {msg.react(`💦`)});

@@ -4,13 +4,15 @@ exports.run = (client, message, args) => {
     //let botPos = target.highestRole.calculatedPosition;
     let reason = args.slice(1).join(' ');
     
-    if(!target) return message.channel.send(":warning: Please specify a member to kick!");
-    if(!reason) return message.channel.send(":warning: Please specify a reason for this kick!");
-    //if(!client.hasPermission('KICK_MEMBERS')) return message.channel.send("<:WrongMark:524375774741135362> I must have grant access to kick members!");
     if(!message.member.hasPermission('KICK_MEMBERS') && message.author.id != '398845938816516096') return message.channel.send("<:WrongMark:524375774741135362> You don't have permission to kick a member!");
+    if(!target) return message.channel.send(":warning: Please specify a valid member to kick!");
+    if(!reason) return message.channel.send(":warning: Please specify a reason for this kick!");
+    if(!target.member(args[0])) return message.channel.send(":warning: I cannot found that member!");
+    //if(!client.hasPermission('KICK_MEMBERS')) return message.channel.send("<:WrongMark:524375774741135362> I must have grant access to kick members!");
     if(message.author.id === target.id) return message.channel.send("<:WrongMark:524375774741135362> That's suicide man, i can't do that!");
-    if(target.highestRole.position >= message.member.highestRole.position) { return message.channel.send("<:WrongMark:524375774741135362> You can't kick with higher role than you!"); }
+    if(target.highestRole.position >= message.member.highestRole.position) { return message.channel.send("<:WrongMark:524375774741135362> You can't kick with higher or equals role than you!"); }
     if(!target.kickable) return message.channel.send("<:WrongMark:524375774741135362> I can't kick this member!");
+      else if(message.author.id == message.guild.owner.user.id)
   
     var embedColor = '#FAFF00';
     var kickEmbed = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!

@@ -21,7 +21,7 @@ exports.run = async(client, msg, args) => {
         .setAuthor(msg.author.username, msg.author.displayAvatarURL)
         .setColor('#FAFF00')
         .setImage(rando_tls_imgs[Math.floor(Math.random() * rando_tls_imgs.length)])
-        .setFooter("🔨 Under development, support RozBot to add more tails pictures!")
+        .setFooter("Have image to submit? Send it to Rozi Vector#6255!")
     msg.channel.sendMessage(embed)
     .then(msg => {
     msg.react(`536846279125499906`)});

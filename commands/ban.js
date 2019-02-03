@@ -4,9 +4,9 @@ exports.run = (client, message, args) => {
     //let botPos = target.highestRole.calculatedPosition;
     let reason = args.slice(1).join(' ');
     
-    if(!target) return message.channel.send(":warning: Please specify a member to ban!");
-    if(!reason) return message.channel.send(":warning: Please specify a reason for this ban!");
     if(!message.member.hasPermission('BAN_MEMBERS') && message.author.id != '398845938816516096') return message.channel.send("<:WrongMark:524375774741135362> You don't have permission to ban a member!");
+    if(!target) return message.channel.send(":warning: Please specify a valid member to ban!");
+    if(!reason) return message.channel.send(":warning: Please specify a reason for this ban!");
     if(message.author.id === target.id) return message.channel.send("<:WrongMark:524375774741135362> That's suicide man, i can't do that!");
     if(target.highestRole.position >= message.member.highestRole.position) { return message.channel.send("<:WrongMark:524375774741135362> You can't ban with higher role than you!"); }
     if(!target.bannable) return message.channel.send("<:WrongMark:524375774741135362> I can't ban this member!");

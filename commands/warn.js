@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     var missingArgsEmbed = new Discord.RichEmbed() // Creates the embed thats sent if the command isnt run right
         .setColor(embedColor)
         .setTitle('')
-        .setDescription('<:WrongMark:524375774741135362> **Missing Arguments!** \n\n Usage: `r!warn [@User] [Reason]`')
+        .setDescription('<:WrongMark:524375774741135362> **Missing Arguments!** \n\n Usage: `r!warn [@User/id number] [Reason]`')
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("<:WrongMark:524375774741135362> You don't have permissions to warn member!"); // Checks if the user has the permission
     let mentioned = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0])); // Gets the user mentioned!
     if(!mentioned) return message.channel.send(missingArgsEmbed); // Triggers if the user donsn't tag a user in the message
@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
   
   
     mentioned.send(`<:scaryrabbit:467816313205686292> You've been warned in **${message.guild.name}**! \n`, warningEmbed); // DMs the user the above embed!
-    message.channel.send(`<:scaryrabbit:467816313205686292> :thumbsup: **${mentioned.username}** has been successfully warned! \nReason: ${reason}\nWarned By: ${message.author.username}`);
+    message.channel.send(`<:scaryrabbit:467816313205686292> :thumbsup: **${mentioned.user.username}** has been successfully warned! \nReason: ${reason}\nWarned By: ${message.author.username}`);
     message.delete();
   
 }
