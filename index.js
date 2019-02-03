@@ -16,7 +16,7 @@ client.config = config;
 require("./server.js");
 
 function changing_status() {
-  let statdetail = [' | r!help | V 2.5'];
+  let statdetail = [' | r!help | V 3.1'];
   let status = [`Type r!help`+statdetail, 
                 `with ${client.users.size.toLocaleString()} users`+statdetail, 
                 `with ${client.guilds.size.toLocaleString()} servers`+statdetail, 

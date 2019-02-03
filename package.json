@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "new-rozbot",
-  "version": "0.2.5",
+  "version": "3.1.0",
   "description": "RozBot build for fun and entertainment members in Discord Server",
   "main": "server.js",
   "scripts": {
