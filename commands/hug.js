@@ -6,14 +6,7 @@ exports.run = async(client, message, args) => {
 
         let user = message.mentions.users.first()
         let act = 'You have been hugged by '
-        const rando_hug_imgs = ["https://cdn.discordapp.com/attachments/535027866459701268/540522110695636992/hugs.png",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511489182367764/49505751_2182507138627935_7846664084059346402_n.jpg",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511489979416578/49287557_1086721364833443_2634241362269548647_n.jpg",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511496618868736/49637385_342675072989775_8381735262803121145_n.jpg",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511504621469715/crystal_hugging_your_oc_collab_by_katetheraccoon-dawrwf0.png",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511511290544149/DtQbj-1XgAA6E8s.jpg",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511529921511424/1258945.jpeg",
-                               "https://cdn.discordapp.com/attachments/535027866459701268/541511518668193793/7262aeb6294215389c69b00e890c1cea.png"];
+        const rando_hug_imgs = ["some content of hug pictures"]; //link picture content of hug
   if(!user)
   {
     let embed = new Discord.RichEmbed()
